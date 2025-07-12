@@ -4,32 +4,31 @@
 
 @layer base {
   :root {
-    /* Gothic Dark Crimson Theme */
-    --background: 0 0% 4%; /* #0a0a0a */
-    --foreground: 0 87% 67%; /* #ff0033 */
-    --card: 7 40% 6%; /* #1a0005 */
-    --card-foreground: 0 87% 67%;
-    --popover: 7 40% 6%;
-    --popover-foreground: 0 87% 67%;
-    --primary: 0 87% 67%; /* #ff0033 */
+    /* Cyberpunk Purple/Blue Theme */
+    --background: 225 12% 12%; /* #1e1e2e */
+    --foreground: 263 100% 77%; /* #8b5cf6 */
+    --card: 225 12% 8%; /* #131319 */
+    --card-foreground: 263 100% 77%;
+    --popover: 225 12% 8%;
+    --popover-foreground: 263 100% 77%;
+    --primary: 263 100% 77%; /* #8b5cf6 */
     --primary-foreground: 0 0% 0%;
-    --secondary: 0 60% 20%; /* #990000 */
-    --secondary-foreground: 0 87% 67%;
-    --muted: 0 20% 10%;
-    --muted-foreground: 0 40% 40%;
-    --accent: 0 87% 67%;
+    --secondary: 220 26% 18%; /* #374151 */
+    --secondary-foreground: 263 100% 77%;
+    --muted: 220 13% 18%;
+    --muted-foreground: 220 9% 55%;
+    --accent: 263 100% 77%;
     --accent-foreground: 0 0% 0%;
     --destructive: 0 87% 67%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 60% 15%;
-    --input: 0 20% 10%;
-    --ring: 0 87% 67%;
+    --border: 220 26% 24%;
+    --input: 220 13% 18%;
+    --ring: 263 100% 77%;
     
-    /* Custom Gothic colors */
-    --crimson-dark: 7 40% 6%; /* #1a0005 */
-    --crimson-glow: 0 87% 67%; /* #ff0033 */
-    --crimson-bright: 0 100% 53%; /* #ff0044 */
-    --crimson-blood: 0 73% 33%; /* #aa0022 */
+    /* Custom cyberpunk colors */
+    --purple-glow: 263 100% 77%; /* #8b5cf6 */
+    --blue-accent: 217 91% 60%; /* #3b82f6 */
+    --cyber-dark: 225 12% 8%; /* #131319 */
     
     --radius: 0.3rem;
   }
@@ -41,8 +40,8 @@
   }
   
   body {
-    @apply bg-[#0a0a0a] text-[#ff0033] font-rajdhani overflow-hidden;
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a0005 100%);
+    @apply bg-gray-900 text-purple-400 font-mono overflow-hidden;
+    background: linear-gradient(135deg, #1f2937 0%, #111827 50%, #0f172a 100%);
   }
   
   /* Custom scrollbar */
@@ -51,16 +50,16 @@
   }
   
   ::-webkit-scrollbar-track {
-    background: #1a0005;
+    background: #1f2937;
   }
   
   ::-webkit-scrollbar-thumb {
-    background: #ff0033;
+    background: #8b5cf6;
     border-radius: 4px;
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    background: #ff0044;
+    background: #a78bfa;
   }
 }
 
@@ -78,14 +77,14 @@
   }
   
   .border-glow {
-    box-shadow: 0 0 10px #ff0033, 0 0 20px #ff0033, inset 0 0 10px rgba(255, 0, 51, 0.1);
+    box-shadow: 0 0 10px #8b5cf6, 0 0 20px #8b5cf6, inset 0 0 10px rgba(139, 92, 246, 0.1);
   }
   
   .bg-hexagon {
     background-image: 
-      radial-gradient(circle at 50% 50%, #ff003320 1px, transparent 1px),
-      linear-gradient(0deg, transparent 24%, #ff003310 25%, #ff003310 26%, transparent 27%, transparent 74%, #ff003310 75%, #ff003310 76%, transparent 77%),
-      linear-gradient(90deg, transparent 24%, #ff003310 25%, #ff003310 26%, transparent 27%, transparent 74%, #ff003310 75%, #ff003310 76%, transparent 77%);
+      radial-gradient(circle at 50% 50%, #8b5cf620 1px, transparent 1px),
+      linear-gradient(0deg, transparent 24%, #8b5cf610 25%, #8b5cf610 26%, transparent 27%, transparent 74%, #8b5cf610 75%, #8b5cf610 76%, transparent 77%),
+      linear-gradient(90deg, transparent 24%, #8b5cf610 25%, #8b5cf610 26%, transparent 27%, transparent 74%, #8b5cf610 75%, #8b5cf610 76%, transparent 77%);
     background-size: 40px 40px;
   }
   
@@ -100,11 +99,11 @@
   @keyframes pulse-glow {
     0%, 100% {
       opacity: 1;
-      box-shadow: 0 0 20px #ff0033;
+      box-shadow: 0 0 20px #8b5cf6;
     }
     50% {
       opacity: 0.7;
-      box-shadow: 0 0 40px #ff0033, 0 0 60px #ff0033;
+      box-shadow: 0 0 40px #8b5cf6, 0 0 60px #8b5cf6;
     }
   }
   
@@ -115,7 +114,7 @@
   }
   
   .liquid-metal {
-    background: linear-gradient(45deg, #ff0033, #aa0022, #ff0044);
+    background: linear-gradient(45deg, #8b5cf6, #6366f1, #3b82f6);
     background-size: 300% 300%;
     animation: liquidFlow 4s ease-in-out infinite;
   }
@@ -124,5 +123,12 @@
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
+  }
+
+  .cyber-grid {
+    background-image: 
+      linear-gradient(rgba(139, 92, 246, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(139, 92, 246, 0.1) 1px, transparent 1px);
+    background-size: 30px 30px;
   }
 }
