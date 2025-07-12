@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Gothic Dark Crimson Theme */
+    --background: 0 0% 4%; /* #0a0a0a */
+    --foreground: 0 87% 67%; /* #ff0033 */
+    --card: 7 40% 6%; /* #1a0005 */
+    --card-foreground: 0 87% 67%;
+    --popover: 7 40% 6%;
+    --popover-foreground: 0 87% 67%;
+    --primary: 0 87% 67%; /* #ff0033 */
+    --primary-foreground: 0 0% 0%;
+    --secondary: 0 60% 20%; /* #990000 */
+    --secondary-foreground: 0 87% 67%;
+    --muted: 0 20% 10%;
+    --muted-foreground: 0 40% 40%;
+    --accent: 0 87% 67%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 87% 67%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 60% 15%;
+    --input: 0 20% 10%;
+    --ring: 0 87% 67%;
+    
+    /* Custom Gothic colors */
+    --crimson-dark: 7 40% 6%; /* #1a0005 */
+    --crimson-glow: 0 87% 67%; /* #ff0033 */
+    --crimson-bright: 0 100% 53%; /* #ff0044 */
+    --crimson-blood: 0 73% 33%; /* #aa0022 */
+    
+    --radius: 0.3rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-[#0a0a0a] text-[#ff0033] font-rajdhani overflow-hidden;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a0005 100%);
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #1a0005;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #ff0033;
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #ff0044;
+  }
+}
+
+@layer utilities {
+  .font-orbitron {
+    font-family: 'Orbitron', monospace;
+  }
+  
+  .font-rajdhani {
+    font-family: 'Rajdhani', sans-serif;
+  }
+  
+  .text-glow {
+    text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
+  }
+  
+  .border-glow {
+    box-shadow: 0 0 10px #ff0033, 0 0 20px #ff0033, inset 0 0 10px rgba(255, 0, 51, 0.1);
+  }
+  
+  .bg-hexagon {
+    background-image: 
+      radial-gradient(circle at 50% 50%, #ff003320 1px, transparent 1px),
+      linear-gradient(0deg, transparent 24%, #ff003310 25%, #ff003310 26%, transparent 27%, transparent 74%, #ff003310 75%, #ff003310 76%, transparent 77%),
+      linear-gradient(90deg, transparent 24%, #ff003310 25%, #ff003310 26%, transparent 27%, transparent 74%, #ff003310 75%, #ff003310 76%, transparent 77%);
+    background-size: 40px 40px;
+  }
+  
+  .animate-pulse-glow {
+    animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .animate-drip {
+    animation: drip 3s ease-in-out infinite;
+  }
+  
+  @keyframes pulse-glow {
+    0%, 100% {
+      opacity: 1;
+      box-shadow: 0 0 20px #ff0033;
+    }
+    50% {
+      opacity: 0.7;
+      box-shadow: 0 0 40px #ff0033, 0 0 60px #ff0033;
+    }
+  }
+  
+  @keyframes drip {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(3px); }
+    100% { transform: translateY(0px); }
+  }
+  
+  .liquid-metal {
+    background: linear-gradient(45deg, #ff0033, #aa0022, #ff0044);
+    background-size: 300% 300%;
+    animation: liquidFlow 4s ease-in-out infinite;
+  }
+  
+  @keyframes liquidFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+}
